@@ -8,7 +8,7 @@ function App() {
     password: "admin123",
   };
 
-  const [setUser] = useState({name: "", email: ""});
+  const [user, setUser] = useState({name: "", email: ""});
   const [error, setError] = useState("");
 
   const Login = details => {
@@ -21,8 +21,8 @@ function App() {
         email: details.email,
      });
    } else {
-      console.log("Details do not match!");
-      setError("Details do not match!");
+      console.log("Either EmployeeID or Password is not correct!");
+      setError("Either EmployeeID or Password is not correct!");
    }
   }
 

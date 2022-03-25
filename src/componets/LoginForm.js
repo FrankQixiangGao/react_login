@@ -8,18 +8,13 @@ function LoginForm({Login, error}) {
     Login(details);
   }
 
-
   return (
    <form onSubmit={submitHandler}>
        <div className='form-inner'>
-           <h2>Login</h2>
+           <h2>Mediakind</h2>
            {(error !== "") ? (<p className="error">{error}</p>) : ""}
-           <div className="form-group">
-               <label htmlfor="name">Name:</label>
-               <input type="text" name="name" id="name" onChange={e => setDetails({...details, name: e.target.value})} value={details.name}/>
-            </div>
             <div className="form-group">
-               <label htmlfor="email">employeeID:</label>
+               <label htmlfor="email">EmployeeID:</label>
                <input type="email" name="email" id="email" />
             </div>
             <div className="form-group">
