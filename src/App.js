@@ -1,48 +1,16 @@
 import React, { useState, useEffect } from "react";
 import LoginForm from "./componets/LoginForm";
-import 
+import MyApp from "./function1";
 
 function App() {
-  const adminUser = {
-    email: "Admin@Medkind",
-    password: "admin123",
-  };
 
-  const [user, setUser] = useState({name: "", email: ""});
-  const [error, setError] = useState("");
-
-  const Login = details => {
-    console.log(details);
-
-   if (details.email === adminUser.email && details.password === adminUser.password) {
-     console.log("Logged in");
-     setUser({
-        name: details.name,
-        email: details.email,
-     });
-   } else {
-      console.log("Either EmployeeID or Password is not correct!");
-      setError("Either EmployeeID or Password is not correct!");
-   }
-  }
-
-  const Logout = () => {
-    setUser({ name: "", email: "" });
-  }
-
-
-  return (
+  return(
     <div className="App">
-      {(user.email !== "") ? (
-        <div className="welcome">
-          <h2>Welcome, <span>{user.email}</span></h2>
-          <button onClick={Logout}>Logout</button>
-        </div>
-      ):(
-        <LoginForm Login={Login} error={error} />
-      )}
+      <MyApp />
     </div>
-  );
+  )
+
+  document.getElementById("root").
 }
 
 export default App;
